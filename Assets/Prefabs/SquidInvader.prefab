@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &60503670950404720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 500673655280229063}
-  m_Layer: 0
-  m_Name: Muzzle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &500673655280229063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60503670950404720}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008000016, y: -0.265, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 474368083939188040}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474368083939188041
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +11,6 @@ GameObject:
   - component: {fileID: 474368083939188040}
   - component: {fileID: 474368083939188042}
   - component: {fileID: 474368083939188043}
-  - component: {fileID: -2047180784952155175}
   m_Layer: 7
   m_Name: SquidInvader
   m_TagString: Enemy
@@ -63,7 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 474368084250204985}
-  - {fileID: 500673655280229063}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,20 +81,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45165086, y: 0.4667432}
   m_EdgeRadius: 0
---- !u!114 &-2047180784952155175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474368083939188041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840790b2fcef7d048842af7a4d845f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3361733397121670604, guid: 3db37f4685a531a4cae2e95f3365b1ee, type: 3}
-  muzzle: {fileID: 500673655280229063}
 --- !u!1 &474368084250204980
 GameObject:
   m_ObjectHideFlags: 0
