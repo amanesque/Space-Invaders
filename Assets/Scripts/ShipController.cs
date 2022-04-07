@@ -12,6 +12,8 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private int lives = 3;
 
+    [SerializeField] private GameObject explosionFX;
+
     private GameManager gameManager;
 
     private void Awake()
@@ -55,6 +57,8 @@ public class ShipController : MonoBehaviour
                 gameManager.UpdateLife(lives);
                 Destroy(gameObject);
             }
+
+            GameObject.Instantiate(explosionFX, new Vector2(transform.position.x, transform.position.y + 0.3f), Quaternion.identity);
         }
     }
 }

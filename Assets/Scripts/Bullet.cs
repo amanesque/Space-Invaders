@@ -5,14 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 8.0f;
-    [SerializeField] private float lifetime = 3.0f;
 
     private BoxCollider2D bulletCollider;
 
     private void Awake()
     {
-        Invoke("SelfDestroy", lifetime);
-
         bulletCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -22,11 +19,6 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        SelfDestroy();
-    }
-
-    private void SelfDestroy()
     {
         Destroy(gameObject);
     }

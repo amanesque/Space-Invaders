@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     public void IncreaseScore(int points)

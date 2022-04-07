@@ -199,4 +199,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1920a89652687a64e99cba0438c08f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionFX: {fileID: 3048423442948200389, guid: 819d8ac6cc427f24985737be602906c8, type: 3}
   points: 75
