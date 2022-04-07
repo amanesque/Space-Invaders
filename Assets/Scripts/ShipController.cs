@@ -8,12 +8,15 @@ public class ShipController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform muzzle;
 
-    [Header("Player Ship Speed")]
+    [Header("Player Ship Properties")]
     [SerializeField] private float speed = 5.0f;
+    [SerializeField] private int lives = 3;
+
+    private GameManager gameManager;
 
     private void Awake()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -38,5 +41,20 @@ public class ShipController : MonoBehaviour
     private void Shoot()
     {
         GameObject.Instantiate(bullet, muzzle.position, Quaternion.identity);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            lives--;
+            gameManager.UpdateLife(lives);
+
+            if (lives == 0)
+            {
+                gameManager.UpdateLife(lives);
+                Destroy(gameObject);
+            }
+        }
     }
 }

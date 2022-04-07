@@ -5,8 +5,7 @@ using UnityEngine;
 public class InvaderSwarm : MonoBehaviour
 {
     [Header("Invaders")]
-    [SerializeField] private GameObject bugInvader;
-    [SerializeField] private GameObject squidInvader;
+    [SerializeField] private GameObject[] invaderTypes;
 
     [Header("Invaders' swarm Properties")]
     [SerializeField] private int rowCount = 4;
@@ -33,36 +32,6 @@ public class InvaderSwarm : MonoBehaviour
         invaders = new GameObject[rowCount * columnCount];
 
         SpawnInvaders();
-
-        maxX = minX + columnCount * (1.6f * xPadding);
-        currentX = minX;
-    }
-
-    private void SpawnInvaders()
-    {
-        minX = spawnStartPos.position.x;
-
-        Vector2 currentPos = spawnStartPos.position;
-
-        for (int i = 0; i < rowCount; i++)
-        {
-            for (int j = 0; j < columnCount; j++)
-            {
-                if (i % 2 == 0)
-                {
-                    invaders[invadersCount++] = GameObject.Instantiate(bugInvader, currentPos, Quaternion.identity);
-                }
-                else
-                {
-                    invaders[invadersCount++] = GameObject.Instantiate(squidInvader, currentPos, Quaternion.identity);
-                }
-
-                currentPos.x += xPadding;
-            }
-
-            currentPos.x = minX;
-            currentPos.y -= yPadding;
-        }
     }
 
     private void Update()
@@ -92,6 +61,29 @@ public class InvaderSwarm : MonoBehaviour
             {
                 ChangeDirection();
             }
+        }
+    }
+
+    private void SpawnInvaders()
+    {
+        minX = spawnStartPos.position.x;
+        maxX = minX + columnCount * (1.6f * xPadding);
+        currentX = minX;
+
+        Vector2 currentPos = spawnStartPos.position;
+
+        for (int i = 0; i < rowCount; i++)
+        {
+            for (int j = 0; j < columnCount; j++)
+            {
+                invaders[invadersCount] = GameObject.Instantiate(invaderTypes[i], currentPos, Quaternion.identity);
+
+                invaders[invadersCount++].transform.SetParent(transform);
+                currentPos.x += xPadding;
+            }
+
+            currentPos.x = minX;
+            currentPos.y -= yPadding;
         }
     }
 

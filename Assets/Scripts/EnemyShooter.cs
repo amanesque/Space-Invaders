@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     [Header("Enemy Bullet Properties")]
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform muzzle;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform muzzle;
 
     private int spawnInterval;
     private int counter;

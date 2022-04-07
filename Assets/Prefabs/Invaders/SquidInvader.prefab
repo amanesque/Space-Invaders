@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 474368083939188040}
   - component: {fileID: 474368083939188042}
   - component: {fileID: 474368083939188043}
+  - component: {fileID: 84913535564640014}
   m_Layer: 7
   m_Name: SquidInvader
   m_TagString: Enemy
@@ -81,6 +82,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45165086, y: 0.4667432}
   m_EdgeRadius: 0
+--- !u!114 &84913535564640014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474368083939188041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1920a89652687a64e99cba0438c08f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 25
 --- !u!1 &474368084250204980
 GameObject:
   m_ObjectHideFlags: 0
